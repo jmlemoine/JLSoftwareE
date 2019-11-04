@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use Datatables;
 
 class StudentController extends Controller
 {
@@ -17,6 +18,12 @@ class StudentController extends Controller
         $students = Student::all()->toArray();
         return view('student.index', compact('students'));
     }
+
+    /*function getdata()
+    {
+        $students = Student::select('first_name', 'last_name');
+        return Datatables::of($students)->make(true);
+    }*/
 
     /**
      * Show the form for creating a new resource.
